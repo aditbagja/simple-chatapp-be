@@ -1,6 +1,7 @@
 package com.app.chatapp.model;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import com.app.chatapp.types.MessageType;
@@ -32,5 +33,6 @@ public class Message {
     private String chatMessage;
 
     @Column
-    private Timestamp timestamp;
+    @Builder.Default
+    private Timestamp timestamp = Timestamp.valueOf(LocalDateTime.now());
 }
